@@ -8,9 +8,9 @@ uis.directive('uiSelectNoChoice',
             templateUrl: function (tElement) {
                 // Needed so the uiSelect can detect the transcluded content
                 tElement.addClass('ui-select-no-choice');
-      
+
                 // Gets theme attribute from parent (ui-select)
-                var theme = tElement.parent().attr('theme') || uiSelectConfig.theme;
+                var theme = uiSelectConfig.theme;
                 return theme + '/no-choice.tpl.html';
             }
         };

@@ -10,12 +10,16 @@ uis.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
 
       var parent = tElement.parent();
       // Gets theme attribute from parent (ui-select)
-      var theme = getAttribute(parent, 'theme') || uiSelectConfig.theme;
+      var theme = uiSelectConfig.theme;
       var multi = angular.isDefined(getAttribute(parent, 'multiple'));
 
-      return theme + (multi ? '/match-multiple.tpl.html' : '/match.tpl.html');      
+      return theme + (multi ? '/match-multiple.tpl.html' : '/match.tpl.html');
     },
     link: function(scope, element, attrs, $select) {
+      var parent = element.parent().parent();
+      if(angular.isDefined(getAttribute(parent, 'uistyle'))) {
+        $select.customBadgeLayout = scope.$eval(getAttribute(parent, 'uistyle'));
+      }
       $select.lockChoiceExpression = attrs.uiLockChoice;
       attrs.$observe('placeholder', function(placeholder) {
         $select.placeholder = placeholder !== undefined ? placeholder : uiSelectConfig.placeholder;

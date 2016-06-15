@@ -5,7 +5,7 @@ uis.directive('uiSelect',
   return {
     restrict: 'EA',
     templateUrl: function(tElement, tAttrs) {
-      var theme = tAttrs.theme || uiSelectConfig.theme;
+      var theme = uiSelectConfig.theme;
       return theme + (angular.isDefined(tAttrs.multiple) ? '/select-multiple.tpl.html' : '/select.tpl.html');
     },
     replace: true,
@@ -83,7 +83,7 @@ uis.directive('uiSelect',
             var sortable = scope.$eval(attrs.sortable);
             $select.sortable = sortable !== undefined ? sortable : uiSelectConfig.sortable;
         });
-        
+
         attrs.$observe('limit', function() {
           //Limit the number of selections allowed
           $select.limit = (angular.isDefined(attrs.limit)) ? parseInt(attrs.limit, 10) : undefined;
