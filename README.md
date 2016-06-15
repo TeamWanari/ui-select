@@ -1,3 +1,22 @@
+# What you for Wanari
+We needed to color the buttons dynamicallyon multiselect fields. So we made it possible the fastest way.
+## Usage: 
+### HTML
+```
+<ui-select multiple uistyle="vm.decorateLabel" ...>
+...
+</ui-select>
+```
+### Javascript:
+```
+function decorateLabel(entity) {
+            return {
+                color: entity.fontColor,
+                "background-color": entity.backgroundColor
+            }
+        }
+```
+
 # AngularJS ui-select [![Build Status](https://travis-ci.org/angular-ui/ui-select.svg?branch=master)](https://travis-ci.org/angular-ui/ui-select) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/ui-select?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 AngularJS-native version of [Select2](http://ivaynberg.github.io/select2/) and [Selectize](http://brianreavis.github.io/selectize.js/). [http://angular-ui.github.io/ui-select/](http://angular-ui.github.io/ui-select/)
