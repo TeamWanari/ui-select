@@ -1,4 +1,4 @@
-# What you for Wanari
+# Whats new for Wanari
 We needed to color the buttons dynamicallyon multiselect fields. So we made it possible the fastest way.
 ## Usage: 
 ### HTML
